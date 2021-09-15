@@ -76,3 +76,5 @@ app.get("/auth/token", (_, res) => {
 })
 
 app.listen(SERVER_PORT, () => console.log("server is running!"));
+
+module.exports = app;
