@@ -75,6 +75,8 @@ app.get("/api/auth/token", (_, res) => {
   res.json({ access_token: access_token})
 })
 
-app.listen(SERVER_PORT, () => console.log("server is running!"));
+if(process.env.NODE_ENV === "development") {
+  app.listen(SERVER_PORT, () => console.log("server is running!"));
+}
 
 module.exports = app;
