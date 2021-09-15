@@ -7,7 +7,7 @@ export const App: React.VFC = () => {
 
   useEffect(() => {
     const getToken = async () => {
-      const response = await fetch('/auth/token');
+      const response = await fetch('/api/auth/token');
       const json = await response.json();
       setToken(json.access_token);
     }

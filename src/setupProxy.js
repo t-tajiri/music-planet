@@ -7,7 +7,7 @@ module.exports = function (app) {
   } else {
     url = window.location.origin;
   }
-  app.use(createProxyMiddleware("/auth/**", {
+  app.use(createProxyMiddleware("/api/**", {
       target: url
   }));
 };

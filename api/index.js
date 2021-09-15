@@ -24,7 +24,7 @@ const generateRandomString = (length) => {
   return text;
 };
 
-app.get("/auth/login", (_, res) => {
+app.get("/api/auth/login", (_, res) => {
   const scope = "streaming user-read-email user-read-private"
   const state = generateRandomString(16);
 
@@ -45,7 +45,7 @@ app.get("/auth/login", (_, res) => {
   res.redirect("https://accounts.spotify.com/authorize/?" + auth_query_parameters.toString());
 })
 
-app.get("/auth/callback", (req, res) => {
+app.get("/api/auth/callback", (req, res) => {
   const code = req.query.code;
 
   const authOptions = {
@@ -71,7 +71,7 @@ app.get("/auth/callback", (req, res) => {
 })
 
 
-app.get("/auth/token", (_, res) => {
+app.get("/api/auth/token", (_, res) => {
   res.json({ access_token: access_token})
 })
 
