@@ -5,7 +5,7 @@ type Props = {
 }
 
 export const WebPlayBack: React.VFC<Props> = ({ token }) => {
-  const [player, setPlayer] = useState({} as Spotify.Player);
+  const [, setPlayer] = useState({} as Spotify.Player);
 
   useEffect(() => {
     const script = document.createElement("script");
